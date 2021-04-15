@@ -34,16 +34,16 @@ while True:
         or esc_jogador == 'papel' and (esc_maquina == 'pedra') \
             or (esc_jogador == 'tesoura') and (esc_maquina == 'papel'):
         print(f'O jogador escolheu {esc_jogador} e a máquina escolheu'
-        ' {esc_maquina} Resultado: Você ganhou :)')
+        f' {esc_maquina}. Resultado: Você ganhou :)')
         jogador_vitorias += 1
 
     elif esc_jogador == esc_maquina:
         print(f'O jogador escolheu {esc_jogador} e a máquina escolheu'
-        ' {esc_maquina} Resultado: Empatou :/')
+        f' {esc_maquina}. Resultado: Empatou :/')
 
     else:
         print(f'O jogador escolheu {esc_jogador} e a máquina escolheu'
-        ' {esc_maquina} Resultado: Você perdeu :(')
+        f' {esc_maquina}. Resultado: Você perdeu :(')
         maquina_vitorias += 1
 
     print('-' * 20)
