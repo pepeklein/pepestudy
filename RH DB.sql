@@ -4,17 +4,17 @@ Use RH
 
 Create Table tb_DEPARTAMENTO
 (
-  COD_DEPTO             INT                 IDENTITY            ,
-  DEPTO                 VARCHAR(30)         NOT NULL
+  COD_DEPTO             int                 identity            ,
+  DEPTO                 varchar(30)         not null
   
-  Constraint    PK_TB_DEP_COD_DEPTO   Primary Key (COD_DEPTO)
+  Constraint   PK_TB_DEP_COD_DEPTO   Primary Key (COD_DEPTO)
 )
 
 Insert tb_DEPARTAMENTO
 ( DEPTO )
 Values
-( 'Comercial' )     ,
-( 'Financeiro' )    ,
+( 'Comercial' )     	,
+( 'Financeiro' )    	,
 ( 'Jurídico' )  	,
 ( 'TI' )	        ,
 ( 'RH' )
@@ -22,11 +22,11 @@ Values
 
 Create Table tb_CARGO
 (
-	COD_CARGO               int					identity        ,
-	CARGO				    varchar(30)			not null        ,
+	COD_CARGO               	int				identity        ,
+	CARGO				varchar(30)			not null        ,
 	SALARIO_INIC			money				not null
 
-	Constraint  PK_TB_CAR_COD_CARGO  Primary Key (COD_CARGO)
+	Constraint   PK_TB_CAR_COD_CARGO   Primary Key (COD_CARGO)
 )
 
 Insert tb_CARGO
@@ -41,23 +41,23 @@ Values
 
 Create Table tb_EMPREGADO
 (
-	CODFUN                      int					identity    ,		
-	NOME						varchar(50)			not null    ,
-	NUM_DEPEND					int					not null    ,
+	CODFUN                      		int				identity    ,		
+	NOME					varchar(50)			not null    ,
+	NUM_DEPEND				int				not null    ,
 	DATA_NASCIMENTO				date				not null    ,
-	COD_DEPTO					int					not null    ,
-	COD_CARGO					int					not null    ,
+	COD_DEPTO				int				not null    ,
+	COD_CARGO				int				not null    ,
 	DATA_ADMISSAO				date				not null    ,
-	SALARIO						money				not null    ,
+	SALARIO					money				not null    ,
 	PREMIO_MENSAL				money				not null    ,
 	SINDICALIZADO				char(01)			not null    , -- S: SINDICALIZADO, N: NÃO SINDICALIZADO
-	OBS							varchar(300)				    ,
-	FOTO						image						    ,
+	OBS					varchar(300)				    ,
+	FOTO					image					    ,
 	COD_SUPERVISOR				int
 
-	Constraint	TB_EMP_CODFUN		Primary Key (CODFUN)                                              ,
-	Constraint	FK_EMP_COD_DEPTO	Foreign Key (COD_DEPTO)	References TB_DEPARTAMENTO  (COD_DEPTO)   ,
-	Constraint	FK_EMP_COD_CARGO	Foreign Key (COD_CARGO)	References TB_CARGO         (COD_CARGO)
+	Constraint   PK_TB_EMP_CODFUN   Primary Key (CODFUN)                                                 ,
+	Constraint   FK_EMP_COD_DEPTO   Foreign Key (COD_DEPTO)   References tb_DEPARTAMENTO   (COD_DEPTO)   ,
+	Constraint   FK_EMP_COD_CARGO	Foreign Key (COD_CARGO)   References tb_CARGO          (COD_CARGO)
 )
 
 Insert tb_EMPREGADO
@@ -68,13 +68,13 @@ VALUES
 
 Create Table tb_DEPENDENTE
 (
-	CODFUN						int					not null,
-	CODDEP						int					not null, 
-	NOME						varchar(50)			not null,
+	CODFUN					int				not null,
+	CODDEP					int				not null, 
+	NOME					varchar(50)			not null,
 	DATA_NASCIMENTO				date				not null
 
-	Constraint	PK_TB_DEP_CODDEP		Primary Key (CODDEP)                                        ,
-	Constraint	FK_TB_DEP_CODFUN		Foreign Key (CODFUN)	References tb_EMPREGADO (CODFUN)		
+	Constraint   PK_TB_DEP_CODDEP   Primary Key (CODDEP)                                   	    ,
+	Constraint   FK_TB_DEP_CODFUN   Foreign Key (CODFUN)   References tb_EMPREGADO (CODFUN)		
 )
 
 Insert tb_DEPENDENTE
