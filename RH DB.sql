@@ -62,7 +62,7 @@ Create Table tb_EMPREGADO
 
 Insert tb_EMPREGADO
 ( NOME , NUM_DEPEND , DATA_NASCIMENTO , COD_DEPTO , COD_CARGO , DATA_ADMISSAO , SALARIO , PREMIO_MENSAL , SINDICALIZADO )
-VALUES
+Values
 ( 'Ronaldo Assis', 1 , '1980-03-21' , 2 , 5 , '1990-11-20' , 52000 , 15000 , 'S' )
 
 
@@ -79,7 +79,7 @@ Create Table tb_DEPENDENTE
 
 Insert tb_DEPENDENTE
 ( CODFUN , CODDEP , NOME , DATA_NASCIMENTO )
-VALUES
+Values
 ( 1 , 1002 , 'Marcia Assis' , '2005-11-23' )
 
 
